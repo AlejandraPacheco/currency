@@ -10,6 +10,11 @@ public class InfoDto {
     public InfoDto() {
     }
 
+    public InfoDto(BigDecimal rate, BigInteger timestamp) {
+        this.rate = rate;
+        this.timestamp = timestamp;
+    }
+
     public BigDecimal getRate() {
         return rate;
     }

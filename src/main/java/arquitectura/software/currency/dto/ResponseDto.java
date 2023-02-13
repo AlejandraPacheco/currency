@@ -1,45 +1,45 @@
 package arquitectura.software.currency.dto;
 
-import java.math.BigDecimal;
-
-public class ResponseDto {
-    private InfoDto infoDto;
-    private RequestDto requestDto;
-    private BigDecimal result;
+public class ResponseDto<T> {
+    private T data;
+    private boolean successful;
+    private String message;
 
     public ResponseDto() {
     }
 
-    public InfoDto getInfoDto() {
-        return infoDto;
+    public ResponseDto(T data, boolean succesful, String message) {
+        this.data = data;
+        this.successful = succesful;
+        this.message = message;
     }
 
-    public void setInfoDto(InfoDto infoDto) {
-        this.infoDto = infoDto;
+    public T getData() {
+        return data;
     }
 
-    public RequestDto getRequestDto() {
-        return requestDto;
+    public void setData(T data) {
+        this.data = data;
     }
 
-    public void setRequestDto(RequestDto requestDto) {
-        this.requestDto = requestDto;
+    public boolean getSuccessful() {
+        return successful;
     }
 
-    public BigDecimal getResult() {
-        return result;
+    public void setSuccessful(boolean succesful) {
+        this.successful = succesful;
     }
 
-    public void setResult(BigDecimal result) {
-        this.result = result;
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     @Override
     public String toString() {
-        return "ResponseDto{" +
-                "infoDto=" + infoDto +
-                ", requestDto=" + requestDto +
-                ", result=" + result +
-                '}';
+        return "ResponseDto [data=" + data + ", succesful=" + successful + ", message=" + message + "]";
     }
 }

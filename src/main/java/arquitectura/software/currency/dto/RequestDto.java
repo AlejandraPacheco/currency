@@ -10,6 +10,12 @@ public class RequestDto {
     public RequestDto() {
     }
 
+    public RequestDto(BigDecimal amount, String from, String to) {
+        this.amount = amount;
+        this.from = from;
+        this.to = to;
+    }
+
     public BigDecimal getAmount() {
         return amount;
     }
