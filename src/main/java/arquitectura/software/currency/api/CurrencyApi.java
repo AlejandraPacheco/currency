@@ -11,5 +11,7 @@ public class CurrencyApi {
         return "Hello World";
     }
 
+    public CurrencyApi() {
+    }
 }
 
