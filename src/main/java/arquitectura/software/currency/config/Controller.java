@@ -25,7 +25,7 @@ public class Controller {
     }
 
     @ExceptionHandler(ServiceError.class)
-    public ResponseEntity<ResponseDto<Void>> handleServiceException(ServiceError e) {
+    public ResponseEntity<ResponseDto<Void>> handleServiceError(ServiceError e) {
             ResponseDto<Void> response = new ResponseDto<>();
             response.setSuccessful(false);
             response.setMessage(e.getMessage());
