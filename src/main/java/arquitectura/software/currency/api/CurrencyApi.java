@@ -23,7 +23,7 @@ public class CurrencyApi {
     }
 
     @GetMapping("/exchange")
-    public ResponseEntity<ResponseDto<ResponseServiceDto>> getCurrency(
+    public ResponseDto<ResponseServiceDto> getCurrency(
             @RequestParam BigDecimal amount,
             @RequestParam String from,
             @RequestParam String to){
@@ -31,7 +31,7 @@ public class CurrencyApi {
             logger.info("Se empieza con la logica de negocio");
             ResponseServiceDto responseServiceDto = currencyBl.convertCurrency(amount, from, to);
             ResponseDto<ResponseServiceDto> responseDto = new ResponseDto<ResponseServiceDto>(responseServiceDto, true, null);
-            return ResponseEntity.ok(responseDto);
+            return responseDto;
     }
 }
 
